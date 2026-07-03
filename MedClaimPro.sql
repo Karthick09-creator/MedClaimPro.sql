@@ -1,8 +1,28 @@
 CREATE DATABASE MedClaimPro;
 GO
 USE MedClaimPro;
+
 GO
 
+Create Procedure SPViewall
+As 
+Begin
+SELECT name FROM sys.tables;
+end
+
+Create Procedure SPview
+AS
+Begin
+Select * From Patients
+Select * from Payers;
+Select * From Providers
+Select * From CPTCodes
+Select * From ICDCodes;
+Select * From Claims
+Select * From ARFollowUpLog
+Select * From Payments;
+Select * From ClaimAuditlog
+End
 
 CREATE TABLE Patients (
     PatientID       INT PRIMARY KEY IDENTITY(1,1),
